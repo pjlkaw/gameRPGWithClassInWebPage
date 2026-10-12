@@ -20,6 +20,7 @@ class Player {
     constructor(name) {
         this.name = name;
         this.health = 100;
+        this.status = true;
         this.damage = 20;
         this.xp = 0;
         this.level = levels[0].levelName;
@@ -35,6 +36,10 @@ class Player {
         this.checkLevel();
         const xpLog = `Nível: ${this.level} - XP: ${this.xp} \n`;
         registerLog(xpLog);
+    }
+
+    heal() {
+        this.health += 10
     }
 
     checkLevel() {
@@ -80,17 +85,20 @@ function combat() {
             monsterDamage(player, monster);
         }
     }
+    if (player.health <= 0 ) {
+        document.getElementById("modal-died-container").style.display = "flex"
+    }
     levelUp()
 }
 
+// Player applies damage
 function playerDamage(target) {
-    // Player applies damage
     let currentMonsterHealth = target.health;
     const monsterCurrentHealthLog = `vida atual de ${target.name}: ${currentMonsterHealth}`;
     registerLog(monsterCurrentHealthLog);
     
     player.attackTarget(target);
-    const monsterDamageTakenLog = `${target.name} recebeu ${player.dano} de dano de ${player.name}`;
+    const monsterDamageTakenLog = `${target.name} recebeu ${player.damage} de dano de ${player.name}`;
     registerLog(monsterDamageTakenLog);
     
     currentMonsterHealth = target.health;
@@ -105,8 +113,8 @@ function playerDamage(target) {
     registerLog(separatorLog);
 }
 
+// Player receives damage
 function monsterDamage(player, monster) {
-    // Player receives damage
     let currentPlayerHealth = player.health;
     const playerCurrentHealthLog = `vida atual de ${player.name}: ${currentPlayerHealth}`;
     registerLog(playerCurrentHealthLog);
@@ -140,8 +148,18 @@ function initializeApplication() {
         combat();
         registerLog(separatorLog);
     });
+
+    document.getElementById("heal-button").addEventListener('click', () => {
+        player.heal()
+        registerLog(`${player.name} Curou 10 de vida`)
+        document.getElementById("player-health").textContent = "Vida: " + player.health;
+    })
     
     const playerHealth = document.getElementById('player-health');
     playerHealth.textContent = "Health: " + player.health;
+
+    document.querySelector(".restart").addEventListener("click", () => {
+    location.reload();
+});
 }
 initializeApplication();

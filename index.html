@@ -8,6 +8,14 @@
 </head>
 <body>
     <main>
+        <section id="modal-died-container" class="modal-container" style="display: none;">
+            <div class="modal-died">
+                Você morreu aperte para reiniciar!
+                <button class="restart">
+                    Reiniciar
+                </button>
+            </div>
+        </section>
         <section class="game-container">
             <div class="player-div person">
                 <img src="player.png" alt="Game Image" width="100" style="border-radius: 50%;">
@@ -26,6 +34,7 @@
 
             <div class="actions">
                 <button class="attack-button" id="attack-button">Start</button>
+                <button class="heal-button" id="heal-button">Heal</button>
             </div>
 
             <div class="log">

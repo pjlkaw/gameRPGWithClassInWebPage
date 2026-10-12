@@ -10,6 +10,36 @@ main{
     height: 100vh;
 }
 
+.modal-container {
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0f0f9c;
+}
+.modal-died {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+}
+.modal-died button {
+    background-color: red;
+    background-color: rgb(83, 9, 9);
+    color: #fff;
+    border: none;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .game-container {
     border: 2px solid #1d1d1d;
     padding: 20px;
@@ -57,6 +87,16 @@ main{
     transition: background-color 0.3s ease;
 }
 
+.heal-button {
+    padding: 10px 20px;
+    background-color: rgb(9, 83, 19);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 /* console aparence */
 .log {
     border-radius: 5px;
@@ -68,6 +108,8 @@ main{
     border: 2px solid #1d1d1d;
     padding: 10px;
     margin-top: 20px;
+    position: relative;
+    z-index: 100;
 }
 
 .log-text {
