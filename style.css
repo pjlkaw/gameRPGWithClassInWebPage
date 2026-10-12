@@ -1,48 +1,65 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Comic Sans MS', cursive; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Comic Sans MS', cursive; 
+}
 
-body{ background-color: #141313; color: #fff; }
+body { 
+    background-color: #141313; 
+    color: #fff; 
+}
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 15px; /* Added padding to prevent touching screen edges on mobile */
 }
 
 .modal-container {
     width: 100%;
     z-index: 10;
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #0f0f0f9c;
+    padding: 15px;
 }
+
 .modal-died {
     background-color: #000000;
     display: flex;
     flex-direction: column;
     padding: 20px;
     border-radius: 20px;
-    width: 200px;
+    width: 100%;
+    max-width: 250px; /* Responsive max-width instead of fixed 200px */
     text-align: center;
 }
+
 .modal-died button {
-    background-color: red;
     background-color: rgb(83, 9, 9);
     color: #fff;
     border: none;
     margin: 10px;
     border-radius: 10px;
     cursor: pointer;
+    padding: 8px;
 }
 
 .game-container {
     border: 2px solid #1d1d1d;
     padding: 20px;
+    width: 100%;
+    max-width: 360px; /* Adapts to smaller screens while capping at 360px */
     border-radius: 10px;
     box-shadow: 0 5px 2px rgba(51, 51, 51, 0.5);
     background-color: #0f0f0f;
@@ -56,6 +73,7 @@ main{
     border-radius: 5px;
     padding: 10px;
 }
+
 .stats {
     height: 80px;
     display: flex;
@@ -75,6 +93,7 @@ main{
     display: flex;
     gap: 10px;
     justify-content: center;
+    flex-wrap: wrap; /* Allows buttons to wrap on very narrow screens */
 }
 
 .attack-button {
@@ -101,7 +120,7 @@ main{
 .log {
     border-radius: 5px;
     width: 100%;
-    max-height: 180px;
+    max-height: 200px;
     text-align: left;
     overflow-y: auto;
     background-color: #1d1d1d;
@@ -115,4 +134,11 @@ main{
 .log-text {
     font-family: 'Courier New', Courier, monospace;
     white-space: pre-line;
+}
+
+/* Simple mobile adjustment */
+@media (max-width: 400px) {
+    .game-container {
+        padding: 12px;
+    }
 }
