@@ -94,9 +94,10 @@ function combat() {
 function playerDamage(target) {
     let currentMonsterHealth = target.health;
     registerLog(`${target.name}'s current health: ${currentMonsterHealth}`);
-
+    registerLog(".")
     player.attackTarget(target);
     registerLog(`${target.name} took ${player.damage} damage from ${player.name}`);
+    registerLog(".")
 
     currentMonsterHealth = target.health;
     registerLog(`${target.name}'s health after the attack: ${currentMonsterHealth}`);
@@ -113,9 +114,11 @@ function playerDamage(target) {
 function monsterDamage(player, monster) {
     let currentPlayerHealth = player.health;
     registerLog(`${player.name}'s current health: ${currentPlayerHealth}`);
+    registerLog(".")
 
     registerLog(`${player.name} took ${monster.damage} damage from ${monster.name}`);
     monster.attackTarget(player);
+    registerLog(".")
 
     currentPlayerHealth = player.health;
     registerLog(`${player.name}'s health after the attack: ${currentPlayerHealth}`);
