@@ -1,0 +1,76 @@
+*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Comic Sans MS', cursive; }
+
+body{ background-color: #141313; color: #fff; }
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    border: 2px solid #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 2px rgba(51, 51, 51, 0.5);
+    background-color: #0f0f0f;
+}
+
+.person {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.stats {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.player-div {
+    border: rgba(52, 109, 52, 0.288) 2px solid;
+}
+
+.enemy-div {
+    border: rgba(206, 15, 15, 0.144) 2px solid;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.attack-button {
+    padding: 10px 20px;
+    background-color: rgb(83, 9, 9);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* console aparence */
+.log {
+    border-radius: 5px;
+    width: 100%;
+    max-height: 180px;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #1d1d1d;
+    border: 2px solid #1d1d1d;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.log-text {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-line;
+}

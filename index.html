@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="game-container">
+            <div class="player-div person">
+                <img src="player.png" alt="Game Image" width="100" style="border-radius: 50%;">
+                <div class="player-stats stats">
+                    <p id="player-health">Vida: 100</p>
+                    <p id="player-level">Camponês - XP: 0</p>
+                </div>
+            </div>
+            <div class="enemy-div person">
+                <img src="enemy.png" alt="Game Image" width="100" style="border-radius: 50%;">
+                <div class="enemy-stats stats">
+                    <p id="enemy-name">Nome: Zumbi</p>
+                    <p id="enemy-health">Vida: 50</p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="attack-button" id="attack-button">Start</button>
+            </div>
+
+            <div class="log">
+                <div class="log-text" id="log-text"></div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
