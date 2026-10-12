@@ -131,9 +131,10 @@ function monsterDamage(player, monster) {
 }
 
 function levelUp() {
-    const playerXpGainLog = `${player.name} ganhou 1 de XP`;
+    const amount = 2
+    const playerXpGainLog = `${player.name} ganhou ${amount} de XP`;
     registerLog(playerXpGainLog);
-    player.addXp(2);
+    player.addXp(amount);
 
     const playerHealthStats = document.getElementById("player-health");
     const playerLevelStats = document.getElementById("player-level");
