@@ -132,7 +132,7 @@ main {
 }
 
 .log-text {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', monospace;
     white-space: pre-line;
 }
 
